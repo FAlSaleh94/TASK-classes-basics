@@ -18,8 +18,42 @@
  */
 class Person {
   // continue the code here
+  constructor(firstName, lastName, gender, birthYear) {
+    this.firstname = firstName;
+    this.lastname = lastName;
+    this.gender = gender;
+    this.birthyear = birthYear;
+    this.interests = [];
+  }
+  printName = () => {
+    console.log(`my name is: ${this.firstname} ${this.lastname}`);
+  };
+  calculateAge = (currentYear) => {
+    return currentYear - this.birthyear;
+  };
+  newInterest = (i) => {
+    // this.interests = [i];
+    this.interests.push(i);
+    return this.interests;
+  };
 }
+const p = new Person("Fatimah", "AlSaleh", "Female", 1994, []);
+p.printName();
+console.log(p.calculateAge(2021));
+console.log(p.newInterest(["gaming"]));
+console.log(p);
 
+const p2 = new Person("Maryam", "AlSaleh", "Female", 1996, []);
+p2.printName();
+console.log(p2.calculateAge(2021));
+console.log(p2.newInterest(["Sleeping"]));
+console.log(p2);
+
+const p3 = new Person("Ahmad", "AlSaleh", "Male", 1984, []);
+p3.printName();
+console.log(p3.calculateAge(2021));
+console.log(p3.newInterest(["Gamer"]));
+console.log(p3);
 /** (Question 2): (15000 Points)
  * 1. Write a class `Movie`, give it the following properties
  * - title
@@ -42,8 +76,23 @@ class Person {
  */
 
 class Movie {
-  // continue the code here
+  constructor(title, duration, genre) {
+    this.title = title;
+    this.duration = duration;
+    this.gender = genre;
+    this.rating = [];
+  }
+
+  rate = (rating) => {
+    if (rating >= 0 && rating <= 10) {
+      this.rating.push(rating);
+    }
+  };
+  rating.reduce((prev, current) => current+prev) / rating.length
 }
+const m = new Movie("Cruella", 134, "Comedy/Crime", []);
+m.rate(7.8);
+console.log(m.rating);
 
 /** (Question 3): (1000 Points)
  * 1. Create a class `Actor` that inherits `Person`, and adds the following properties
@@ -55,3 +104,11 @@ class Movie {
  */
 
 // write the class here
+class Actor extends Person {
+  Movie = [];
+  addMovie(movie) {
+    this.movie.push(movie);
+  }
+}
+
+const
